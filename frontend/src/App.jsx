@@ -33,7 +33,7 @@ function App() {
         <VideoProvider>
           <BenefitsProvider>
             <FontSizeProvider>
-              <BrowserRouter>
+              <BrowserRouter basename="/Mi-demo-web">
                 <main className='container mx-auto px-10'>
                   <Routes>
                     {/* Rutas públicas */}

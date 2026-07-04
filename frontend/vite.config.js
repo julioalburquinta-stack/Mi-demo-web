@@ -4,7 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Mi-demo-web/',
+
   plugins: [react(), tailwindcss()],
+
   test: {
     globals: true,
     environment: 'jsdom',

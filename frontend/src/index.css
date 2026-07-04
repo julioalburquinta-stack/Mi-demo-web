@@ -1,0 +1,7 @@
+@import "tailwindcss"; /*Importamos TailwindCSS para usar sus utilidades en los estilos*/
+
+body {
+  background: #F9F6F1; /* Fondo principal beige claro */
+  color: #2E3A46;      /* Texto principal gris azulado oscuro */
+  font-family: 'Inter', sans-serif; /* Fuente clara y legible */
+}

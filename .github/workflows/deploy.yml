@@ -18,6 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: frontend
+
     steps:
       - name: Descargar código
         uses: actions/checkout@v4
@@ -27,26 +31,25 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Instalar dependencias
         run: npm install
 
-      - name: Compilar proyecto
+      - name: Build
         run: npm run build
 
-      - name: Subir archivos
+      - name: Subir build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: frontend/dist
 
   deploy:
     environment:
       name: github-pages
-
     needs: build
-
     runs-on: ubuntu-latest
 
     steps:
-      - name: Publicar
+      - name: Deploy
         uses: actions/deploy-pages@v4
